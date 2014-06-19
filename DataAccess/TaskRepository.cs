@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Objects;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 namespace DataAccess
 {
@@ -73,13 +75,26 @@ namespace DataAccess
         {
             using (Entities.TodoListEntities context = (new Entities.TodoListEntities()))
             {
-                context.Tasks.Attach(task);
-                var entry = context.Entry(task);
-                entry.Property(e => e.Text).IsModified = true;
-                entry.Property(e => e.Title).IsModified = true;
-                entry.Property(e => e.IsDone).IsModified = true;
-                entry.Property(e => e.Deadline).IsModified = true;
-                context.SaveChanges();
+                try
+                {
+                    context.Tasks.Attach(task);
+                    var entry = context.Entry(task);
+                    entry.Property(e => e.Text).IsModified = true;
+                    entry.Property(e => e.Title).IsModified = true;
+                    entry.Property(e => e.IsDone).IsModified = true;
+                    entry.Property(e => e.Deadline).IsModified = true;
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var validationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach(var validationError in validationErrors.ValidationErrors)
+                        {
+                            Trace.TraceWarning("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
             }       
         }
     }

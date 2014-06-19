@@ -1,5 +1,6 @@
 ﻿/// <reference path="F:\Projects\.NET\Lifecycle\TodoList\Scripts/bootstrap.js" />
 /// <reference path="F:\Projects\.NET\Lifecycle\TodoList\Scripts/jquery-1.9.0.js" />
+/// <reference path="F:\Projects\.NET\Lifecycle\TodoList\Scripts/jquery-ui-1.10.4.js" />
 
 (function () {
     $(document).ready(function () {
@@ -14,6 +15,13 @@
     });
     window.ajaxReceiver = function (result) {
         console.log(result);
+        var dialogTemplate = $('<div class="dialog"></div>').append('<div class="content">' + result.Text + '</div>');
+
+        
+        dialogTemplate.dialog({
+            title: result.Title
+        });
+
     };
 
     window.ajaxError = function (result) {

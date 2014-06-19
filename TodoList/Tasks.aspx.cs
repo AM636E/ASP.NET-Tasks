@@ -9,15 +9,14 @@ namespace TodoList
 {
     public partial class Tasks : System.Web.UI.Page
     {
-        private TaskRepository _repository;
-
+       
         protected void Page_Init(object sender, EventArgs e)
         {
            
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Trace.Warn("hello");
         }
 
         protected void gvTask_Sorting(object sender, GridViewSortEventArgs e)
@@ -33,7 +32,7 @@ namespace TodoList
                     );
             }
             else
-            {
+            {                
                 tasks = tasks.OrderByDescending(s => s.Id);
             }
         }
@@ -47,7 +46,7 @@ namespace TodoList
 
             var task = repository.GetById(taskId);
 
-            return task;
+            return new Entities.Task() { Id = taskId, Created = DateTime.Now, Title = "Lorem ipsum", Text = "Dolore sit amet", User = new Entities.User() { Id = 1, Login = "User" } };
         }
     }
 }

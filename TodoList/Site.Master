@@ -35,6 +35,8 @@
     <style runat="server">
         <% foreach (string style in new List<string> { 
             "/Content/bootstrap.css",
+            "/Content/themes/base/jquery.ui.all.css",
+            "/Content/themes/base/jquery.ui.dialog.css",
             "/Resources/Css/common.css"
         }) {
             %> @import url("<%=style%>?token=<%=Convert.ToInt32(((DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds)).ToString()%>");
@@ -69,6 +71,7 @@
     <% foreach (string script in new List<string> { 
             "/Scripts/jquery-1.9.0.js",
             "/Scripts/bootstrap.js",
+            "/Scripts/jquery-ui-1.10.4.js",
             "/Resources/Js/main.js"            
         })
        { %>
