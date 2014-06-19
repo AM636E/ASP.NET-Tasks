@@ -1,0 +1,28 @@
+﻿body {
+}
+
+.answers {
+    width: 900px;
+}
+
+.answers .list-item {
+    height: 50px;
+    width: 400px;
+    background: gray;
+    float:left;
+    line-height: 50px;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 5px solid #000;
+    border-radius: 100px;
+}
+
+.answers .list-item:hover {
+    background: #474747;
+}
+
+input[type=submit],#rblAnswers {
+    display: none;
+}

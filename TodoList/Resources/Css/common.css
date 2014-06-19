@@ -1,0 +1,7 @@
+﻿body {
+}
+
+textarea.form-control {
+    height: 500px !important;
+    resize: none;
+}

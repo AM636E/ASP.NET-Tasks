@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TodoList.Site" EnableViewState="false" %>
+
+<%
+    string token = Convert.ToInt32(((DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds)).ToString();
+%>
+<!DOCTYPE html>
+
+<%--<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        <% foreach (string style in new List<string> { 
+            "/Content/bootstrap.css"
+        }) {
+            %> @import url("<%=style%>?token=<%=Convert.ToInt32(((DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds)).ToString()%>");
+            <%;
+        }
+
+        %>
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    
+</body>
+</html>--%>
+
+<html>
+<head>
+    <title>
+        <asp:ContentPlaceHolder ID="cphTitle" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <style runat="server">
+        <% foreach (string style in new List<string> { 
+            "/Content/bootstrap.css",
+            "/Resources/Css/common.css"
+        }) {
+            %> @import url("<%=style%>?token=<%=Convert.ToInt32(((DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds)).ToString()%>");
+            <%;
+        }
+
+        %>
+    </style>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="container">
+    <form id="main" runat="server">
+        <asp:ObjectDataSource ID="odsTask" runat="server"
+            TypeName="DataAccess.TaskRepository"
+            DataObjectTypeName="Entities.Task"
+            OnObjectCreating="odsTask_ObjectCreating"
+            SelectMethod="GetAll"
+            UpdateMethod="UpdateTask"
+            InsertMethod="InsertTask"
+            SelectCountMethod="GetTaskCount"
+            DeleteMethod="DeleteTask"></asp:ObjectDataSource>
+        <ul class="nav nav-tabs">
+            <li><a href="AddTask.aspx">Add task</a></li>
+            <asp:ContentPlaceHolder ID="cplMenu" runat="server"></asp:ContentPlaceHolder>
+        </ul>
+        <asp:ContentPlaceHolder ID="cphBody" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="cphFooter" runat="server">
+            <a href="Tasks.aspx">All tasks</a>
+        </asp:ContentPlaceHolder>
+    </form>
+    <% foreach (string script in new List<string> { 
+            "/Scripts/jquery-1.9.0.js",
+            "/Scripts/bootstrap.js",
+            "/Resources/Js/main.js"            
+        })
+       { %>
+    <script src="<%=script%>?token=<%=token%>"></script>
+    <% } %>
+</body>
+</html>
