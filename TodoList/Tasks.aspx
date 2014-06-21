@@ -26,7 +26,11 @@
             </asp:TemplateField>
             <asp:BoundField HeaderText="Text" DataField="Text" />                
             <asp:BoundField HeaderText="Created" DataField="Created" />
-            <asp:BoundField HeaderText="Done?" DataField="IsDone" />
+            <asp:TemplateField HeaderText="Done">
+                <ItemTemplate>
+                    <%# Eval("IsDone") %>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
     <asp:ScriptManager ID="smAjax" runat="server" EnablePageMethods="true"></asp:ScriptManager>

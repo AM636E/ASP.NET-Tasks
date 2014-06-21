@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TranslatorService;
+using Translator.Service.TranslatorService;
+//using TranslatorService;
 
 namespace Translator
 {
     public partial class TranslatorForm : System.Web.UI.Page
     {
-        private ITranslatorService service;
+        private YandexTranslatorService service;
         private Dictionary<string, string> countriesFrom;
         public Dictionary<string, string> Languages
         {

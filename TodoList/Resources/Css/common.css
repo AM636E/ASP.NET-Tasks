@@ -5,3 +5,11 @@ textarea.form-control {
     height: 500px !important;
     resize: none;
 }
+
+.ui-dialog-titlebar {
+    background: rgb(223, 223, 125) !important;
+}
+
+.tasks-dialog {
+    background: rgb(255, 255, 102) !important;
+}

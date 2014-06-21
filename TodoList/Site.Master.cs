@@ -20,5 +20,11 @@ namespace TodoList
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["TodoListEntities"].ConnectionString;
             e.ObjectInstance = new DataAccess.TaskRepository(connectionString);
         }
+
+        protected void odsUser_ObjectCreating(object sender, ObjectDataSourceEventArgs e)
+        {
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["TodoListEntities"].ConnectionString;
+            e.ObjectInstance = new DataAccess.UserRepository(connectionString);
+        }
     }
 }

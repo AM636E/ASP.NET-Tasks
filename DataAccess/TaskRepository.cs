@@ -22,7 +22,7 @@ namespace DataAccess
         {
             using (DbContext context = new DbContext(this._connectionString))
             {
-                return context.Set<Entities.Task>().OrderBy(s=>s.Priority).OrderBy(s=>s.IsDone).ToList();
+                return context.Set<Entities.Task>().OrderBy(s => s.Priority).OrderBy(s => s.IsDone).ToList();
             }
         }
 
@@ -54,7 +54,7 @@ namespace DataAccess
         }
 
         public void DeleteTask(Entities.Task task)
-        {           
+        {
             using (Entities.TodoListEntities context = (new Entities.TodoListEntities()))
             {
                 context.Tasks.Attach(task);
@@ -75,27 +75,33 @@ namespace DataAccess
         {
             using (Entities.TodoListEntities context = (new Entities.TodoListEntities()))
             {
-                try
-                {
-                    context.Tasks.Attach(task);
-                    var entry = context.Entry(task);
-                    entry.Property(e => e.Text).IsModified = true;
-                    entry.Property(e => e.Title).IsModified = true;
-                    entry.Property(e => e.IsDone).IsModified = true;
-                    entry.Property(e => e.Deadline).IsModified = true;
-                    context.SaveChanges();
-                }
-                catch (DbEntityValidationException ex)
-                {
-                    foreach (var validationErrors in ex.EntityValidationErrors)
-                    {
-                        foreach(var validationError in validationErrors.ValidationErrors)
-                        {
-                            Trace.TraceWarning("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
-                        }
-                    }
-                }
-            }       
+                //   try
+                //  {
+                context.Tasks.Attach(task);
+                var entry = context.Entry(task);
+                entry.Property(e => e.Text).IsModified = true;
+                entry.Property(e => e.Title).IsModified = true;
+                entry.Property(e => e.IsDone).IsModified = true;
+                entry.Property(e => e.Deadline).IsModified = true;
+                context.SaveChanges();
+                //   }
+                //  catch (DbEntityValidationException ex)
+                //  {
+                //      foreach (var validationErrors in ex.EntityValidationErrors)
+                //      {
+                //         foreach(var validationError in validationErrors.ValidationErrors)
+                //        {
+                //            Trace.TraceWarning("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                //        }
+                //    }
+                // }
+            }
+        }
+
+
+        public List<Entities.Task> GetTasksForUser(int userId)
+        {
+            return this.GetAll().Where(t => { return t.User.Id == userId; }).ToList();
         }
     }
 }

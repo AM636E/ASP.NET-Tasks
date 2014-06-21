@@ -48,5 +48,7 @@ namespace DataAccess
         /// </summary>
         /// <returns></returns>
         int GetTaskCount();
+
+        List<Entities.Task> GetTasksForUser(int userId);
     }
 }

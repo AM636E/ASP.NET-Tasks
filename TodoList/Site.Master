@@ -5,28 +5,6 @@
 %>
 <!DOCTYPE html>
 
-<%--<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style>
-        <% foreach (string style in new List<string> { 
-            "/Content/bootstrap.css"
-        }) {
-            %> @import url("<%=style%>?token=<%=Convert.ToInt32(((DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds)).ToString()%>");
-            <%;
-        }
-
-        %>
-    </style>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    
-    
-</body>
-</html>--%>
-
 <html>
 <head>
     <title>
@@ -58,8 +36,20 @@
             InsertMethod="InsertTask"
             SelectCountMethod="GetTaskCount"
             DeleteMethod="DeleteTask"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="odsUser" runat="server"
+            TypeName="DataAccess.UserRepository"
+            DataObjectTypeName="Entities.User"
+            OnObjectCreating="odsUser_ObjectCreating"
+            SelectMethod="GetAll"
+            UpdateMethod="UpdateUser"
+            InsertMethod="InsertTask"
+            SelectCountMethod="GetTaskCount"
+            DeleteMethod="DeleteTask"
+            ></asp:ObjectDataSource>
         <ul class="nav nav-tabs">
-            <li><a href="AddTask.aspx">Add task</a></li>
+            <li><a href="/AddTask.aspx">Add task</a></li>
+            <li><a href="/Tasks.aspx">Tasks</a></li>
+            <li><a href="/User/Users.aspx">Users</a></li>
             <asp:ContentPlaceHolder ID="cplMenu" runat="server"></asp:ContentPlaceHolder>
         </ul>
         <asp:ContentPlaceHolder ID="cphBody" runat="server">

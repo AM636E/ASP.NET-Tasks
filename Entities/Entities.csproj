@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60DC6FF7-0145-4328-90E4-010502A67C72}</ProjectGuid>
+    <ProjectGuid>{8F9C2F6E-0748-4B2A-9A62-7DD3ECC51F6F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Entities</RootNamespace>
@@ -48,49 +48,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task.cs">
-      <DependentUpon>TaskListModel.tt</DependentUpon>
+      <DependentUpon>TodoListModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TaskListModel.Context.cs">
+    <Compile Include="TodoListModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TaskListModel.Context.tt</DependentUpon>
+      <DependentUpon>TodoListModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TaskListModel.cs">
+    <Compile Include="TodoListModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TaskListModel.tt</DependentUpon>
+      <DependentUpon>TodoListModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TaskListModel.Designer.cs">
+    <Compile Include="TodoListModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TaskListModel.edmx</DependentUpon>
+      <DependentUpon>TodoListModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>TaskListModel.tt</DependentUpon>
+      <DependentUpon>TodoListModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="TaskListModel.edmx">
+    <EntityDeploy Include="TodoListModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TaskListModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>TodoListModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="TaskListModel.Context.tt">
+    <None Include="packages.config" />
+    <None Include="TodoListModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TaskListModel.edmx</DependentUpon>
-      <LastGenOutput>TaskListModel.Context.cs</LastGenOutput>
+      <DependentUpon>TodoListModel.edmx</DependentUpon>
+      <LastGenOutput>TodoListModel.Context.cs</LastGenOutput>
     </None>
-    <None Include="TaskListModel.edmx.diagram">
-      <DependentUpon>TaskListModel.edmx</DependentUpon>
+    <None Include="TodoListModel.edmx.diagram">
+      <DependentUpon>TodoListModel.edmx</DependentUpon>
     </None>
-    <None Include="TaskListModel.tt">
+    <None Include="TodoListModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TaskListModel.edmx</DependentUpon>
-      <LastGenOutput>TaskListModel.cs</LastGenOutput>
+      <DependentUpon>TodoListModel.edmx</DependentUpon>
+      <LastGenOutput>TodoListModel.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

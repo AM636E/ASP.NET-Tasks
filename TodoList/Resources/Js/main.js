@@ -15,9 +15,7 @@
     });
     window.ajaxReceiver = function (result) {
         console.log(result);
-        var dialogTemplate = $('<div class="dialog"></div>').append('<div class="content">' + result.Text + '</div>');
-
-        
+        var dialogTemplate = $('<div class="dialog tasks-dialog"></div>').append('<div class="content">' + result.Text + '</div>');        
         dialogTemplate.dialog({
             title: result.Title
         });
@@ -25,6 +23,11 @@
     };
 
     window.ajaxError = function (result) {
+        console.log(result);
+        var dialogTemplate = $('<div class="dialog tasks-dialog"></div>').append('<div class="content">' + result._message + '</div>');
+        dialogTemplate.dialog({
+            title: result._exceptionType
+        });
 
     };
 })(jQuery);

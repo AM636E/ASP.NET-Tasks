@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Net;
 using System.IO;
-using TranslatorService;
+//using TranslatorService;
 using Newtonsoft.Json;
 namespace Translator.Service.TranslatorService
 {
-    public class YandexTranslatorService : ITranslatorService
+    public class YandexTranslatorService// : ITranslatorService
     {
         private string baseUrl;
         private string apiKey;

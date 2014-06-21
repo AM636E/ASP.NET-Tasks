@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cf9abe5c2b924bcb94dc547c176791f8" Name="Diagram1">
-        <EntityTypeShape EntityType="TodoListModel.Task" Width="1.5" PointX="8.75" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TodoListModel.User" Width="1.625" PointX="0.875" PointY="0.625" IsExpanded="true" />
+      <Diagram DiagramId="5018e68f635e4bf285f8999e34ec6ede" Name="Diagram1">
+        <EntityTypeShape EntityType="TodoListModel.Task" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TodoListModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="TodoListModel.FK_Task_UID" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

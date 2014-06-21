@@ -136,6 +136,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="EditTask.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -156,6 +157,7 @@
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
     <Content Include="ShowTask.aspx" />
     <Content Include="Tasks.aspx" />
+    <Content Include="User\Users.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +171,13 @@
     <Compile Include="AjaxService.asmx.cs">
       <DependentUpon>AjaxService.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EditTask.aspx.cs">
+      <DependentUpon>EditTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditTask.aspx.designer.cs">
+      <DependentUpon>EditTask.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowTask.aspx.cs">
@@ -195,6 +204,13 @@
     <Compile Include="TodolistWebPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="User\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
@@ -212,7 +228,7 @@
       <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{60dc6ff7-0145-4328-90e4-010502a67c72}</Project>
+      <Project>{8f9c2f6e-0748-4b2a-9a62-7dd3ecc51f6f}</Project>
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>

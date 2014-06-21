@@ -15,15 +15,16 @@ namespace DevProject
 
             try
             {
-                TaskRepository tr = new TaskRepository(connectionString);
 
-                var tasks = tr.GetAll();
+                UserRepository repository = new UserRepository(connectionString);
 
-                foreach (var task in tasks)
+                var users = repository.GetAll();
+
+                foreach(var user in users)
                 {
-                    Console.WriteLine(task.Text);
-                  
+                    Console.WriteLine("{0} {1}", user.Login, user.Email);
                 }
+                Console.ReadLine();
             }
             catch(Exception ex)
             {
