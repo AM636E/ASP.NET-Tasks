@@ -92,5 +92,29 @@ namespace DataAccess
         {
             return this.GetAll().Count;
         }
+
+
+        public bool DoesUserExists(string username, string password)
+        {
+            using (Entities.TodoListEntities context = new Entities.TodoListEntities())
+            {
+                return context.Users.Any(r => r.Login == username && r.Pass == password);
+            }
+        }
+
+
+        public string GetFirstName(string username)
+        {
+            return this.GetByLogin(username).FirstName;
+        }
+
+
+        public Entities.User GetByLogin(string login)
+        {
+            using (Entities.TodoListEntities context = new Entities.TodoListEntities())
+            {
+                return context.Users.Where(e => e.Login == login).First();
+            }
+        }
     }
 }

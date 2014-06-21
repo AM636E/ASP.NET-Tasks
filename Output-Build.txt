@@ -1,0 +1,3 @@
+﻿1>------ Build started: Project: TodoList, Configuration: Debug Any CPU ------
+1>  TodoList -> F:\Projects\.NET\Lifecycle\TodoList\bin\TodoList.dll
+========== Build: 1 succeeded, 0 failed, 9 up-to-date, 0 skipped ==========

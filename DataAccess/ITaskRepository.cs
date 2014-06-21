@@ -50,5 +50,7 @@ namespace DataAccess
         int GetTaskCount();
 
         List<Entities.Task> GetTasksForUser(int userId);
+
+        
     }
 }

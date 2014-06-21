@@ -15,7 +15,11 @@ namespace DataAccess
 
         void UpdateUser(Entities.User user);
         void DeleteUser(Entities.User user);
-
         int GetUsersCount();
+        bool DoesUserExists(string username, string password);
+
+        string GetFirstName(string username);
+
+        Entities.User GetByLogin(string login);
     }
 }

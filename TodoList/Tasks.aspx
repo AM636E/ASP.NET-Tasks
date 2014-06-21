@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Trace="false"  CodeBehind="Tasks.aspx.cs" Inherits="TodoList.Tasks" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Trace="true"  CodeBehind="Tasks.aspx.cs" Inherits="TodoList.Tasks" %>
 
 <asp:Content ID="cMenu" ContentPlaceHolderID="cplMenu" runat="server">
 </asp:Content>

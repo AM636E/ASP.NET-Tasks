@@ -58,6 +58,24 @@ namespace TodoList {
         protected global::System.Web.UI.WebControls.ObjectDataSource odsUser;
         
         /// <summary>
+        /// btnLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnLogout;
+        
+        /// <summary>
+        /// btnRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnRegister;
+        
+        /// <summary>
         /// cplMenu control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace TodoList {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder cplMenu;
+        
+        /// <summary>
+        /// lblFirstname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFirstname;
         
         /// <summary>
         /// cphBody control.

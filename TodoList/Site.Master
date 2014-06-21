@@ -3,6 +3,9 @@
 <%
     string token = Convert.ToInt32(((DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds)).ToString();
 %>
+<%
+   
+%>
 <!DOCTYPE html>
 
 <html>
@@ -44,14 +47,24 @@
             UpdateMethod="UpdateUser"
             InsertMethod="InsertTask"
             SelectCountMethod="GetTaskCount"
-            DeleteMethod="DeleteTask"
-            ></asp:ObjectDataSource>
+            DeleteMethod="DeleteTask"></asp:ObjectDataSource>
         <ul class="nav nav-tabs">
             <li><a href="/AddTask.aspx">Add task</a></li>
             <li><a href="/Tasks.aspx">Tasks</a></li>
             <li><a href="/User/Users.aspx">Users</a></li>
+            <li>
+                <asp:LinkButton ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="false"></asp:LinkButton>
+            </li>
+             <li>
+                <asp:LinkButton ID="btnRegister" runat="server" Text="Register" OnClick="btnLogout_Click" Visible="true"></asp:LinkButton>
+            </li>
             <asp:ContentPlaceHolder ID="cplMenu" runat="server"></asp:ContentPlaceHolder>
         </ul>
+        <div class="pull-right">
+            <h4 class="heading">
+                <asp:Label ID="lblFirstname" runat="server" />
+            </h4>
+        </div>
         <asp:ContentPlaceHolder ID="cphBody" runat="server">
         </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder ID="cphFooter" runat="server">
@@ -66,6 +79,6 @@
         })
        { %>
     <script src="<%=script%>?token=<%=token%>"></script>
-    <% } %>
+    <% }%>
 </body>
 </html>
