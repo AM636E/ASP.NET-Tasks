@@ -175,6 +175,8 @@
       <DependentUpon>AjaxService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Code\Managers\Security\ISecurityManager.cs" />
+    <Compile Include="Code\Managers\Security\SecurityManager.cs" />
     <Compile Include="EditTask.aspx.cs">
       <DependentUpon>EditTask.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
